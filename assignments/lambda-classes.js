@@ -67,6 +67,26 @@ class TeamLead extends Instructor {
 }
 
 
-const Sally = new Person({
+const Michonne = new Person({
+    name: "Sally",
+    age: 24,
+    location: "New York",
+});
 
-})
+const Rick = new Instructor ({
+    specialty: "redux",
+    favLanguage: "JavaScript",
+    catchPhrase: "Great job team!",
+});
+
+const Maggie = new Student ({
+    previousBackground: "Logistics",
+    className: "DS14",
+    favSubjects: ["HTML", "CSS", "JavaScript"],
+});
+
+const Daryl = new TeamLead ({
+    gradClassName: "DS1",
+    favInstructor: "Carol",
+});
+
