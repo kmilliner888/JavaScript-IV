@@ -25,7 +25,7 @@ class Instructor extends Person {
     }
 
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}`;
+        return `${student} receives a perfect score on ${subject}`;
     }
 }
 
@@ -41,12 +41,12 @@ class Student extends Person {
         return(this.favSubjects);
     }
 
-    PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${subject}`;
+    PRAssignment(student, subject) {
+        return `${student} has submitted a PR for ${subject}`;
     }
 
-    sprintChallenge(subject) {
-        return `${student.name} has begun sprint challenge on ${subject}`;
+    sprintChallenge(student, subject) {
+        return `${student} has begun sprint challenge on ${subject}`;
     }
 }
 
@@ -57,12 +57,12 @@ class TeamLead extends Instructor {
     this.favInstructor = tlAttrs.favInstructor;
     }
 
-    standUp(channel) {
-        return `${this.name} announces to ${this.channel}, @channel standy times!`;
+    standUp(name, channel) {
+        return `${name} announces to ${channel}, @channel standy times!`;
     }
 
-    debugsCode(student) {
-        return `${this.name} debugs ${student.name}'s code on ${subject}`;
+    debugsCode(name, student, subject) {
+        return `${name} debugs ${student}'s code on ${subject}`;
     }
 }
 
@@ -89,4 +89,14 @@ const Daryl = new TeamLead ({
     gradClassName: "DS1",
     favInstructor: "Carol",
 });
+
+
+console.log(Michonne.speak());
+console.log(Rick.demo("JavaScript"));
+console.log(Rick.grade("Glenn", "Computer Science"));
+console.log(Maggie.listsSubjects());
+console.log(Maggie.PRAssignment("Maggie", "WebDev"));
+console.log(Maggie.sprintChallenge("Maggie", "callbacks"));
+console.log(Daryl.standUp("Daryl", "@WEBPT11"));
+console.log(Daryl.debugsCode("Daryl", "Maggie", "arrays"));
 
